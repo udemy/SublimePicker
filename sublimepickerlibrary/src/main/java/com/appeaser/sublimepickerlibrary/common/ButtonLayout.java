@@ -133,8 +133,8 @@ public class ButtonLayout extends LinearLayout implements View.OnClickListener {
                 bPositive.setVisibility(View.VISIBLE);
                 bNegative.setVisibility(View.VISIBLE);
 
-                bPositive.setText(getResources().getIdentifier("set_reminder", "string", "com.udemy.android"));
-                bNegative.setText(getResources().getIdentifier("back", "string", "com.udemy.android"));
+                bPositive.setText(res.getString(R.string.ok));
+                bNegative.setText(res.getString(R.string.cancel));
 
                 SUtils.setViewBackground(bPositive,
                         SUtils.createButtonBg(context, bgColor,
