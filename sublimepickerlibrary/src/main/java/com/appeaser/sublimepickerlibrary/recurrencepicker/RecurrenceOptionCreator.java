@@ -756,6 +756,9 @@ public class RecurrenceOptionCreator extends FrameLayout
         mButtonLayout = (DecisionButtonLayout) findViewById(R.id.roc_decision_button_layout);
         mButtonLayout.applyOptions(mButtonLayoutCallback);
 
+        ((TextView) findViewById(R.id.recurrence_title))
+                .setText(getResources().getIdentifier("select_days", "string", "com.udemy.android"));
+
         SUtils.setViewBackground(findViewById(R.id.freqSpinnerHolder), mHeaderBackgroundColor,
                 SUtils.CORNER_TOP_LEFT | SUtils.CORNER_TOP_RIGHT);
 

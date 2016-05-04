@@ -111,8 +111,8 @@ public class DecisionButtonLayout extends LinearLayout implements View.OnClickLi
                 bPositive.setVisibility(View.VISIBLE);
                 bNegative.setVisibility(View.VISIBLE);
 
-                bPositive.setText(res.getString(R.string.ok));
-                bNegative.setText(res.getString(R.string.cancel));
+                bPositive.setText(getResources().getIdentifier("next_uc", "string", "com.udemy.android"));
+                bNegative.setText(getResources().getIdentifier("remove_reminder", "string", "com.udemy.android"));
 
                 SUtils.setViewBackground(bPositive,
                         SUtils.createButtonBg(context, bgColor,
