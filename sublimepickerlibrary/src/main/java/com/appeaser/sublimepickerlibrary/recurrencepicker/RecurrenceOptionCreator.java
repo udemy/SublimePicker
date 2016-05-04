@@ -909,6 +909,10 @@ public class RecurrenceOptionCreator extends FrameLayout
         mRecurrence.wkst = EventRecurrence.timeDay2Day(RecurrenceUtils.getFirstDayOfWeek());
         mRecurrenceSetListener = callback;
 
+        // Show/hide clear button depending if there's a recurrenceRule
+        mButtonLayout.toggleClearAlarmButton(recurrenceRule != null
+                && !recurrenceRule.isEmpty());
+
         mTime.set(currentlyChosenTime);
 
         if (!TextUtils.isEmpty(timeZone)) {

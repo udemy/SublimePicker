@@ -182,6 +182,11 @@ public class DecisionButtonLayout extends LinearLayout implements View.OnClickLi
         }
     }
 
+    // Show or hide the negative (clear reminder) button
+    public void toggleClearAlarmButton(boolean show) {
+        mNegativeButton.setVisibility(show ? View.VISIBLE : View.GONE);
+    }
+
     @Override
     public void onClick(View v) {
         if (v == mPositiveButton) {
