@@ -167,6 +167,10 @@ public class SublimePicker extends FrameLayout
 
         @Override
         public void onCancel() {
+            // Reset the display to recurrence
+            mCurrentPicker = SublimeOptions.Picker.REPEAT_OPTION_PICKER;
+            updateDisplay();
+
             mListener.onCancelled();
         }
 

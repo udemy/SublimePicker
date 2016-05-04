@@ -30,7 +30,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minWidth="@dimen/recurrence_picker_width"
-                android:minHeight="@dimen/recurrence_picker_height"
                 android:descendantFocusability="beforeDescendants"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
@@ -41,8 +40,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
+                    <TextView
+                        android:id="@+id/recurrence_title"
+                        android:textAppearance="@style/SPTimeLabelTextAppearance"
+                        android:textSize="22sp"
+                        android:textColor="#FFFFFF"
+                        android:layout_width="match_parent"
+                        android:padding="12dp"
+                        android:text="Select days"
+                        android:layout_height="wrap_content" />
+
+                    <!-- Set gone for our case -->
                     <Spinner
                         android:id="@+id/freqSpinner"
+                        android:visibility="gone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         style="?attr/spRocFreqSpinnerStyle" />
@@ -58,13 +69,15 @@
                     android:paddingBottom="4dp"
                     android:paddingTop="4dp">
 
+                    <!-- Set gone for our case -->
                     <LinearLayout
                         android:id="@+id/intervalGroup"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start"
                         android:paddingLeft="24dp"
-                        android:paddingRight="24dp">
+                        android:paddingRight="24dp"
+                        android:visibility="gone">
 
                         <TextView
                             android:id="@+id/intervalPreText"
@@ -115,12 +128,14 @@
                             android:layout_height="wrap_content" />
                     </RadioGroup>
 
+                    <!-- Set gone for our case -->
                     <LinearLayout
                         android:id="@+id/endGroup"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:visibility="gone">
 
                         <Spinner
                             android:id="@+id/endSpinner"

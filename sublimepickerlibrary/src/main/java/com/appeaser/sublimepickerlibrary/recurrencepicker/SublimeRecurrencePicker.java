@@ -233,6 +233,9 @@ public class SublimeRecurrencePicker extends FrameLayout
     // Controls the visibility of recurrence options menu
     // & recurrence option creator
     public void updateView() {
+        // Only show recurrence creator (the week days)
+
+        /*
         if (mCurrentView == CurrentView.RECURRENCE_OPTIONS_MENU) {
             mRecurrenceOptionCreator.setVisibility(View.GONE);
             llRecurrenceOptionsMenu.setVisibility(View.VISIBLE);
@@ -251,9 +254,10 @@ public class SublimeRecurrencePicker extends FrameLayout
                 }
             });
         } else if (mCurrentView == CurrentView.RECURRENCE_CREATOR) {
+        */
             llRecurrenceOptionsMenu.setVisibility(View.GONE);
             mRecurrenceOptionCreator.setVisibility(View.VISIBLE);
-        }
+        //}
     }
 
     void updateFlowLayout(RecurrenceOption recurrenceOption) {
