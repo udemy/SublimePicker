@@ -200,7 +200,9 @@ public class ButtonLayout extends LinearLayout implements View.OnClickListener {
     // Disables the positive button as and when the user selected options
     // become invalid.
     public void updateValidity(boolean valid) {
-        mPositiveButton.setEnabled(valid);
+        // Always enable positive button
+        // mPositiveButton.setEnabled(valid);
+        mPositiveButton.setEnabled(true);
 
         // TODO: Find a better way to do this
         // Disabled state for Icon presentation (only for the positive checkmark icon)

@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <Button
+        android:id="@+id/buttonNegative"
+        style="?attr/spButtonModeOkCancelButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_weight="0" />
+
     <Space
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -30,14 +38,6 @@
         android:minHeight="@dimen/sp_dialog_button_bar_height"
         android:scaleType="center"
         android:contentDescription="@string/cd_positive_component"
-        android:visibility="gone"
-        android:layout_weight="0" />
-
-    <Button
-        android:id="@+id/buttonNegative"
-        style="?attr/spButtonModeOkCancelButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:visibility="gone"
         android:layout_weight="0" />
 

@@ -587,8 +587,10 @@ public class SublimePicker extends FrameLayout
             mTimePicker.setIs24HourView(mOptions.is24HourView());
             mTimePicker.setValidationCallback(this);
 
-            ivRecurrenceOptionsTP.setVisibility(mRecurrencePickerEnabled ?
-                    View.VISIBLE : View.GONE);
+            // Always hide recurrence option ImageView
+            // ivRecurrenceOptionsTP.setVisibility(mRecurrencePickerEnabled ?
+                    // View.VISIBLE : View.GONE);
+            ivRecurrenceOptionsTP.setVisibility(View.GONE);
         } else {
             llMainContentHolder.removeView(mTimePicker);
             mTimePicker = null;
