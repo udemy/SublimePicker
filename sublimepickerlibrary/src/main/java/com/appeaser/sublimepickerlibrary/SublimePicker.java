@@ -113,12 +113,14 @@ public class SublimePicker extends FrameLayout
         public void onRepeatOptionSet(SublimeRecurrencePicker.RecurrenceOption option, String recurrenceRule) {
             mCurrentRecurrenceOption = option;
             mRecurrenceRule = recurrenceRule;
-            onDone();
+            onDone(false);
         }
 
         @Override
-        public void onDone() {
-            if (mDatePickerEnabled || mTimePickerEnabled) {
+        public void onDone(boolean removeReminder) {
+            if(removeReminder) {
+                mButtonLayoutCallback.onCancel(true);
+            } else if (mDatePickerEnabled || mTimePickerEnabled) {
                 updateCurrentPicker();
                 updateDisplay();
             } else { /* No other picker is activated. Dismiss. */
@@ -166,12 +168,14 @@ public class SublimePicker extends FrameLayout
         }
 
         @Override
-        public void onCancel() {
+        public void onCancel(boolean removeReminder) {
             // Reset the display to recurrence
             mCurrentPicker = SublimeOptions.Picker.REPEAT_OPTION_PICKER;
             updateDisplay();
 
-            mListener.onCancelled();
+            if(removeReminder) {
+                mListener.onCancelled();
+            }
         }
 
         @Override

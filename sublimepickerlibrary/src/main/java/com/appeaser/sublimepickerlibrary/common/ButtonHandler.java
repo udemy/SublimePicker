@@ -266,7 +266,7 @@ public class ButtonHandler implements View.OnClickListener {
         if (v == mPositiveButtonDP || v == mPositiveButtonTP) {
             mCallback.onOkay();
         } else if (v == mNegativeButtonDP || v == mNegativeButtonTP) {
-            mCallback.onCancel();
+            mCallback.onCancel(false);
         } else if (v == mSwitcherButtonDP || v == mSwitcherButtonTP) {
             mCallback.onSwitch();
         }
@@ -274,7 +274,7 @@ public class ButtonHandler implements View.OnClickListener {
 
     public interface Callback {
         void onOkay();
-        void onCancel();
+        void onCancel(boolean removeReminder);
         void onSwitch();
     }
 }

@@ -223,7 +223,7 @@ public class ButtonLayout extends LinearLayout implements View.OnClickListener {
         if (v == mPositiveButton) {
             mCallback.onOkay();
         } else if (v == mNegativeButton) {
-            mCallback.onCancel();
+            mCallback.onCancel(false);
         } else if (v == mSwitcherButton) {
             mCallback.onSwitch();
         }

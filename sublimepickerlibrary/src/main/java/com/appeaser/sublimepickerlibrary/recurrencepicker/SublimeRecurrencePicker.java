@@ -393,6 +393,11 @@ public class SublimeRecurrencePicker extends FrameLayout
             // If cancelled, bring user back to recurrence options menu
             mCurrentView = CurrentView.RECURRENCE_OPTIONS_MENU;
             updateView();
+
+            if(mCallback != null) {
+                mCallback.onDone(true);
+            }
+
         }
     };
 
@@ -522,6 +527,6 @@ public class SublimeRecurrencePicker extends FrameLayout
         /**
          * Currently not used.
          */
-        void onDone();
+        void onDone(boolean removeReminder);
     }
 }
