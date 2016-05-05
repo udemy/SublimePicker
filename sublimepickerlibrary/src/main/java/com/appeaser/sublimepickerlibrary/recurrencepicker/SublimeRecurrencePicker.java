@@ -29,22 +29,17 @@ import android.graphics.drawable.StateListDrawable;
 import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.text.TextUtils;
-import android.text.format.Time;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.appeaser.sublimepickerlibrary.R;
 import com.appeaser.sublimepickerlibrary.utilities.SUtils;
 
 import java.util.ArrayList;
-import java.util.TimeZone;
 
 public class SublimeRecurrencePicker extends FrameLayout
         implements View.OnClickListener {
@@ -234,98 +229,8 @@ public class SublimeRecurrencePicker extends FrameLayout
     // & recurrence option creator
     public void updateView() {
         // Only show recurrence creator (the week days)
-
-        /*
-        if (mCurrentView == CurrentView.RECURRENCE_OPTIONS_MENU) {
-            mRecurrenceOptionCreator.setVisibility(View.GONE);
-            llRecurrenceOptionsMenu.setVisibility(View.VISIBLE);
-
-            // Current repeat option may have changed
-            updateFlowLayout(mCurrentRecurrenceOption);
-
-            // reset `scrollY` to 0
-            final ScrollView scrollView
-                    = (ScrollView) llRecurrenceOptionsMenu.findViewById(R.id.svRecurrenceOptionsMenu);
-            llRecurrenceOptionsMenu.post(new Runnable() {
-                @Override
-                public void run() {
-                    if (scrollView.getScrollY() != 0)
-                        scrollView.fullScroll(ScrollView.FOCUS_UP);
-                }
-            });
-        } else if (mCurrentView == CurrentView.RECURRENCE_CREATOR) {
-        */
-            llRecurrenceOptionsMenu.setVisibility(View.GONE);
-            mRecurrenceOptionCreator.setVisibility(View.VISIBLE);
-        //}
-    }
-
-    void updateFlowLayout(RecurrenceOption recurrenceOption) {
-        // Currently selected recurrence option
-        int viewIdToSelect;
-
-        switch (recurrenceOption) {
-            case DOES_NOT_REPEAT:
-                viewIdToSelect = R.id.tvDoesNotRepeat;
-                break;
-            case DAILY:
-                viewIdToSelect = R.id.tvDaily;
-                break;
-            case WEEKLY:
-                viewIdToSelect = R.id.tvWeekly;
-                break;
-            case MONTHLY:
-                viewIdToSelect = R.id.tvMonthly;
-                break;
-            case YEARLY:
-                viewIdToSelect = R.id.tvYearly;
-                break;
-            case CUSTOM:
-                viewIdToSelect = R.id.tvChosenCustomOption;
-                break;
-            default:
-                viewIdToSelect = R.id.tvDoesNotRepeat;
-        }
-
-        for (TextView tv : mRepeatOptionTextViews) {
-            tv.setOnClickListener(this);
-
-            // If we have a non-empty recurrence rule,
-            // display it for easy re-selection
-            if (tv.getId() == R.id.tvChosenCustomOption) {
-                if (!TextUtils.isEmpty(mRecurrenceRule)) {
-                    EventRecurrence eventRecurrence = new EventRecurrence();
-                    eventRecurrence.parse(mRecurrenceRule);
-                    Time startDate = new Time(TimeZone.getDefault().getID());
-                    startDate.set(mCurrentlyChosenTime);
-                    eventRecurrence.setStartDate(startDate);
-
-                    tv.setVisibility(View.VISIBLE);
-
-                    tv.setText(EventRecurrenceFormatter.getRepeatString(
-                            getContext(), getContext().getResources(),
-                            eventRecurrence, true));
-                } else { // hide this TextView since 'mRecurrenceRule' is not available
-                    tv.setVisibility(View.GONE);
-                    continue;
-                }
-            }
-
-            // Selected option
-            if (tv.getId() == viewIdToSelect) {
-                // Set checkmark drawable & drawable-padding
-                tv.setCompoundDrawablesWithIntrinsicBounds(null, null,
-                        mCheckmarkDrawable, null);
-                tv.setCompoundDrawablePadding(mSelectedOptionDrawablePadding);
-                tv.setTextColor(mSelectedStateTextColor);
-
-                continue;
-            }
-
-            // Unselected options
-            tv.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);
-            tv.setTextColor(mUnselectedStateTextColor);
-        }
+        llRecurrenceOptionsMenu.setVisibility(View.GONE);
+        mRecurrenceOptionCreator.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -397,7 +302,6 @@ public class SublimeRecurrencePicker extends FrameLayout
             if(mCallback != null) {
                 mCallback.onDone(true);
             }
-
         }
     };
 

@@ -49,14 +49,6 @@
                         android:padding="12dp"
                         android:layout_height="wrap_content" />
 
-                    <!-- Set gone for our case -->
-                    <Spinner
-                        android:id="@+id/freqSpinner"
-                        android:visibility="gone"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="?attr/spRocFreqSpinnerStyle" />
-
                 </FrameLayout>
 
                 <LinearLayout
@@ -67,43 +59,6 @@
                     android:orientation="vertical"
                     android:paddingBottom="4dp"
                     android:paddingTop="4dp">
-
-                    <!-- Set gone for our case -->
-                    <LinearLayout
-                        android:id="@+id/intervalGroup"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="start"
-                        android:paddingLeft="24dp"
-                        android:paddingRight="24dp"
-                        android:visibility="gone">
-
-                        <TextView
-                            android:id="@+id/intervalPreText"
-                            android:textAppearance="?attr/spRocLabelTextAppearance"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                        <EditText
-                            android:id="@+id/interval"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:ems="2"
-                            android:gravity="center_horizontal"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            android:paddingLeft="4dp"
-                            android:paddingRight="4dp"
-                            android:selectAllOnFocus="true"
-                            android:textSize="15sp"
-                            android:singleLine="true" />
-
-                        <TextView
-                            android:id="@+id/intervalPostText"
-                            android:textAppearance="?attr/spRocLabelTextAppearance"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-                    </LinearLayout>
 
                     <include layout="@layout/week_buttons" />
 
@@ -126,51 +81,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
                     </RadioGroup>
-
-                    <!-- Set gone for our case -->
-                    <LinearLayout
-                        android:id="@+id/endGroup"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="start"
-                        android:orientation="horizontal"
-                        android:visibility="gone">
-
-                        <Spinner
-                            android:id="@+id/endSpinner"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            style="?attr/spRocEndSpinnerStyle" />
-
-                        <EditText
-                            android:id="@+id/endCount"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:ems="3"
-                            android:gravity="center_horizontal"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            android:selectAllOnFocus="true"
-                            android:textSize="15sp"
-                            android:singleLine="true" />
-
-                        <TextView
-                            android:id="@+id/postEndCount"
-                            android:textAppearance="?attr/spRocLabelTextAppearance"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:gravity="bottom"
-                            android:singleLine="true"
-                            android:visibility="gone" />
-
-                        <TextView
-                            android:id="@+id/endDate"
-                            style="?attr/spRocEndDateStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
