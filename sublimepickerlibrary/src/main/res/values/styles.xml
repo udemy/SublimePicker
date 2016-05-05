@@ -88,7 +88,7 @@
         <item name="spSelectedDayCircleAlpha">60</item>
         <item name="spCalendarEnabledTextColor">?android:attr/textColorSecondary</item>
         <item name="spCalendarDisabledTextColor">?attr/spCalendarDisabledTextColor</item>
-        <item name="spCalendarEnabledSelectedTextColor">?attr/colorAccent</item>
+        <item name="spCalendarEnabledSelectedTextColor">@color/udemy_green</item>
         <item name="spMonthNameTextColor">?android:attr/textColorSecondary</item>
         <item name="spDayNameTextColor">?android:attr/textColorSecondary</item>
     </style>
@@ -133,7 +133,7 @@
         <item name="android:focusable">true</item>
         <item name="android:clickable">true</item>
         <item name="android:gravity">center_vertical|center_horizontal</item>
-        <item name="android:textColor">?attr/colorAccent</item>
+        <item name="android:textColor">@color/udemy_green</item>
         <item name="android:minWidth">64dp</item>
         <item name="android:maxLines">1</item>
         <item name="android:minHeight">@dimen/sp_dialog_button_bar_height</item>
@@ -160,7 +160,7 @@
     <!-- TimePicker -->
 
     <style name="SublimeTimePickerStyle">
-        <item name="spHeaderBackground">?spHeaderBackgroundPtr</item>
+        <item name="spHeaderBackground">@color/udemy_green</item>
         <item name="spHeaderTextColor">?attr/spPrimaryTextSecondaryWhenActivatedMaterialInversePtr</item>
     </style>
 
@@ -178,7 +178,7 @@
 
     <style name="RadialTimePickerViewStyle">
         <item name="spNumbersTextColor">?attr/spNumbersTextColorPtr</item>
-        <item name="spNumbersSelectorColor">?attr/colorControlActivated</item>
+        <item name="spNumbersSelectorColor">@color/udemy_green</item>
         <item name="spNumbersBackgroundColor">?attr/spNumbersBackgroundColorPtr</item>
         <item name="spNumbersInnerTextColor">?attr/spNumbersInnerTextColorPtr</item>
     </style>
@@ -200,9 +200,9 @@
     <style name="SublimeRecurrencePickerStyle">
         <item name="spRecurrencePickerHeadingStyle">@style/RecurrencePickerHeadingStyle</item>
         <item name="spRecurrencePickerOptionsStyle">@style/RecurrencePickerOptionsStyle</item>
-        <item name="spHeaderBackground">?attr/colorAccent</item>
+        <item name="spHeaderBackground">@color/udemy_green</item>
         <item name="spPickerBackground">@android:color/transparent</item>
-        <item name="spSelectedOptionTextColor">?attr/colorAccent</item>
+        <item name="spSelectedOptionTextColor">@color/udemy_green</item>
         <item name="spUnselectedOptionsTextColor">?android:attr/textColorPrimary</item>
         <item name="spPressedOptionBgColor">?attr/colorControlHighlight</item>
         <item name="spSelectedOptionDrawable">@drawable/checkmark_medium_ff</item>
@@ -246,7 +246,7 @@
     <!-- RecurrenceOptionCreator -->
 
     <style name="RecurrenceOptionCreatorStyle">
-        <item name="spHeaderBackground">?attr/colorAccent</item>
+        <item name="spHeaderBackground">@color/udemy_green</item>
         <item name="spEndDateFormat">spMediumFormat</item>
         <item name="spRocLabelTextAppearance">
             @style/STextAppearance.RecurrenceOptionCreatorLabelStyle
@@ -262,9 +262,9 @@
         <item name="spRocFreqSpinnerItemStyle">@style/FreqSpinnerItemStyle</item>
         <item name="spRocEndSpinnerItemStyle">@style/EndSpinnerItemStyle</item>
         <item name="spRocEndSpinnerDropDownItemStyle">@style/EndSpinnerDropDownItemStyle</item>
-        <item name="spWeekButtonUnselectedTextColor">?attr/colorAccent</item>
+        <item name="spWeekButtonUnselectedTextColor">@color/udemy_green</item>
         <item name="spWeekButtonSelectedTextColor">?android:attr/textColorPrimaryInverse</item>
-        <item name="spWeekButtonSelectedCircleColor">?attr/colorAccent</item>
+        <item name="spWeekButtonSelectedCircleColor">@color/udemy_green</item>
     </style>
 
     <style name="STextAppearance.RecurrenceOptionCreatorLabelStyle">
@@ -370,13 +370,13 @@
         <item name="spPresentation">spButton</item>
         <item name="spOkActionDrawable">@drawable/checkmark_medium_ff</item>
         <item name="spCancelActionDrawable">@drawable/cancel_medium_ff</item>
-        <item name="spIconColor">?attr/colorAccent</item>
+        <item name="spIconColor">@color/udemy_green</item>
         <item name="spButtonBgColor">?attr/colorButtonNormal</item>
         <item name="spButtonPressedBgColor">?attr/colorControlHighlight</item>
         <item name="spButtonBarBgColor">@android:color/transparent</item>
         <item name="spButtonModeOkCancelButtonStyle">@style/SButtonBarButtonStyle</item>
         <item name="spButtonModeSwitcherButtonStyle">?attr/spButtonModeOkCancelButtonStyle</item>
-        <item name="spButtonInvertedBgColor">?attr/colorAccent</item>
+        <item name="spButtonInvertedBgColor">@color/udemy_green</item>
         <item name="spButtonPressedInvertedBgColor">@color/sp_ripple_material_dark</item>
     </style>
 

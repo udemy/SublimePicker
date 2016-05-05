@@ -14,6 +14,8 @@
 -->
 <resources>
 
+    <color name="udemy_green">#17AA1C</color>
+
     <!-- SublimeDatePicker -->
     <color name="calendar_disabled_text_color_dark">#35ffffff</color>
     <color name="calendar_disabled_text_color_light">#23000000</color>
