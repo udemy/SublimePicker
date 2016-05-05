@@ -188,6 +188,13 @@ public class RecurrenceOptionCreator extends FrameLayout
                 copyModelToEventRecurrence(mModel, mRecurrence);
                 rrule = mRecurrence.toString();
             }
+            // No days set, since BYDAY was never appended to the string
+            if(rrule != null && !rrule.contains("BYDAY")) {
+                Toast.makeText(getContext(),
+                    getResources().getIdentifier("please_select_at_least_one_day", "string", "com.udemy.android"),
+                    Toast.LENGTH_LONG).show();
+                return;
+            }
 
             mRecurrenceSetListener.onRecurrenceSet(rrule);
         }
