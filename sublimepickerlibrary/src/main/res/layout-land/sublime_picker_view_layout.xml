@@ -32,6 +32,11 @@
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
+        <com.appeaser.sublimepickerlibrary.common.ButtonLayout
+            android:id="@+id/button_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
     </LinearLayout>
 
     <com.appeaser.sublimepickerlibrary.recurrencepicker.SublimeRecurrencePicker

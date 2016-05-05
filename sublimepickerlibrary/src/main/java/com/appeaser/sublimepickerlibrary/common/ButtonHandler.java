@@ -41,18 +41,19 @@ public class ButtonHandler implements View.OnClickListener {
             mButtonBarBgColor;
 
     public ButtonHandler(@NonNull SublimePicker sublimePicker) {
-        Context context = sublimePicker.getContext();
+        // Context context = sublimePicker.getContext();
 
-        mIsInLandscapeMode = context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
+        // mIsInLandscapeMode = context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
 
-        if (mIsInLandscapeMode) {
-            initializeForLandscape(sublimePicker);
-        } else {
+        //if (mIsInLandscapeMode) {
+            // initializeForLandscape(sublimePicker);
+        //} else {
             // Takes care of initialization
             mPortraitButtonHandler = (ButtonLayout) sublimePicker.findViewById(R.id.button_layout);
-        }
+        //}
     }
 
+    /*
     private void initializeForLandscape(SublimePicker sublimeMaterialPicker) {
         Context context = SUtils.createThemeWrapper(sublimeMaterialPicker.getContext(),
                 R.attr.sublimePickerStyle,
@@ -112,8 +113,8 @@ public class ButtonHandler implements View.OnClickListener {
             SUtils.setViewBackground(mSwitcherButtonTP,
                     SUtils.createButtonBg(context, buttonInvertedBgColor,
                             buttonPressedInvertedBgColor));
-
-            if (presentation == 0 /* mode: Button */) {
+            // mode: Button
+            if (presentation == 0) {
                 bPositiveDP.setVisibility(View.VISIBLE);
                 bPositiveTP.setVisibility(View.VISIBLE);
 
@@ -145,7 +146,8 @@ public class ButtonHandler implements View.OnClickListener {
 
                 mNegativeButtonDP = bNegativeDP;
                 mNegativeButtonTP = bNegativeTP;
-            } else /* mode: ImageView */ {
+            } else {
+                // mode: ImageView
                 ivPositiveDP.setVisibility(View.VISIBLE);
                 ivPositiveTP.setVisibility(View.VISIBLE);
 
@@ -195,6 +197,7 @@ public class ButtonHandler implements View.OnClickListener {
         mSwitcherButtonDP.setOnClickListener(this);
         mSwitcherButtonTP.setOnClickListener(this);
     }
+    */
 
     /**
      * Initializes state for this layout
@@ -206,33 +209,37 @@ public class ButtonHandler implements View.OnClickListener {
     public void applyOptions(boolean switcherRequired, @NonNull Callback callback) {
         mCallback = callback;
 
-        if (mIsInLandscapeMode) {
-            mSwitcherButtonDP.setVisibility(switcherRequired ? View.VISIBLE : View.GONE);
-            mSwitcherButtonTP.setVisibility(switcherRequired ? View.VISIBLE : View.GONE);
-        } else {
+        // if (mIsInLandscapeMode) {
+        //     mSwitcherButtonDP.setVisibility(switcherRequired ? View.VISIBLE : View.GONE);
+        //     mSwitcherButtonTP.setVisibility(switcherRequired ? View.VISIBLE : View.GONE);
+        // } else {
             // Let ButtonLayout handle callbacks
             mPortraitButtonHandler.applyOptions(switcherRequired, callback);
-        }
+        // }
     }
 
     // Returns whether switcher button is being used in this layout
     public boolean isSwitcherButtonEnabled() {
+        /*
         return mIsInLandscapeMode ?
                 (mSwitcherButtonDP.getVisibility() == View.VISIBLE || mSwitcherButtonTP.getVisibility() == View.VISIBLE)
                 : (mPortraitButtonHandler.isSwitcherButtonEnabled());
+                */
+
+        return false;
     }
 
     // Used when the pickers are switched
     public void updateSwitcherText(@NonNull SublimeOptions.Picker displayedPicker, CharSequence text) {
-        if (mIsInLandscapeMode) {
+       /* if (mIsInLandscapeMode) {
             if (displayedPicker == SublimeOptions.Picker.DATE_PICKER) {
                 mSwitcherButtonDP.setText(text);
             } else if (displayedPicker == SublimeOptions.Picker.TIME_PICKER) {
                 mSwitcherButtonTP.setText(text);
             }
-        } else {
+        } else { */
             mPortraitButtonHandler.updateSwitcherText(text);
-        }
+        // }
     }
 
     // Disables the positive button as and when the user selected options
