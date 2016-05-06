@@ -1360,12 +1360,7 @@ public class SublimeTimePicker extends FrameLayout
                 setCurrentItemShowing(HOUR_INDEX, true, true);
             } else if (v.getId() == R.id.minutes) {
                 setCurrentItemShowing(MINUTE_INDEX, true, true);
-            } else {
-                // Failed to handle this click, don't vibrate.
-                return;
             }
-
-            SUtils.vibrateForTimePicker(SublimeTimePicker.this);
         }
     };
 
